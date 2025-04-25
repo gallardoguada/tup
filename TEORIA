@@ -1,0 +1,293 @@
+Fundamentos
+Esta forma de programar (paradigma) se basa en un famoso teorema, desarrollado por Edsger Dijkstra, que demuestra que todo programa puede escribirse utilizando únicamente las tres estructuras básicas de control:
+
+Secuencia: bloque secuencial de instrucciones ejecutadas una tras otra.
+
+Selección: instrucción condicional con doble alternativa, como if condición then instrucción-1 else instrucción-2.
+
+Iteración: bucle condicional como while condición do instrucción.
+
+Las sentencias de control permiten tomar decisiones a partir de comparaciones.
+
+Se usan instrucciones condicionales y de ciclos.
+
+Un condicional es un conjunto de sentencias que pueden o no ejecutarse, dependiendo de una condición.
+
+Un ciclo es un conjunto de sentencias que se ejecutan varias veces hasta cumplir una condición de término.
+
+Las sentencias contenidas se escriben más indentadas que la sentencia de control.
+
+Instrucciones Condicionales
+IF
+
+SWITCH
+
+Instrucciones de Ciclo
+WHILE
+
+FOR
+
+REPEAT
+
+Operadores Relacionales
+Usados para expresar condiciones entre dos valores:
+
+c
+Copiar
+Editar
+if (a == b) printf("Son iguales");
+
+Operador	Descripción
+>	Mayor que
+>=	Mayor o igual que
+<	Menor que
+<=	Menor o igual que
+==	Igual que
+!=	Diferente que
+Estructura IF simple
+c
+Copiar
+Editar
+if (condición) sentencia;
+Ejemplo:
+c
+Copiar
+Editar
+#include <stdio.h>
+#include <conio.h>
+
+int main() {
+    int num;
+    printf("Ingrese un número entero por teclado: ");
+    scanf("%d", &num);
+
+    if (num > 0) printf("%d es POSITIVO", num);
+
+    getch();
+    return 0;
+}
+Estructura IF con ELSE
+c
+Copiar
+Editar
+if (condición) sentencia1;
+else sentencia2;
+Ejemplo:
+c
+Copiar
+Editar
+#include <stdio.h>
+#include <conio.h>
+
+int main() {
+    int num;
+    printf("Ingrese un número entero por teclado: ");
+    scanf("%d", &num);
+
+    if (num > 0)
+        printf("%d es POSITIVO", num);
+    else
+        printf("%d es negativo o igual a cero\n", num);
+
+    getch();
+    return 0;
+}
+IF con ELSE y condición de divisibilidad
+c
+Copiar
+Editar
+#include <stdio.h>
+#include <conio.h>
+
+int main() {
+    int n;
+    printf("Teclee un número entero: ");
+    scanf("%d", &n);
+
+    if (n % 3 == 0)
+        printf("%d es divisible por 3\n", n);
+    else
+        printf("%d no es múltiplo de 3\n", n);
+
+    getch();
+    return 0;
+}
+IF anidado con caracteres
+c
+Copiar
+Editar
+#include <stdio.h>
+#include <conio.h>
+
+int main() {
+    char car;
+    printf("Teclee un carácter:\n");
+    scanf("%c", &car);
+
+    if (car == 'a')
+        printf("Se ingresó la letra a\n");
+    else
+        printf("Se ingresó el carácter %c\n", car);
+
+    getch();
+    return 0;
+}
+Ejercicio
+Enunciado: El programa lee un número entero y lo transforma en el impar inmediatamente mayor si no era ya impar.
+
+c
+Copiar
+Editar
+int main() {
+    int a;
+    scanf("%d", &a);
+    if (a % 2 == 0) a = a + 1;
+    printf("Ahora es impar: %d\n", a);
+    return 0;
+}
+IF con más de una acción por condición
+c
+Copiar
+Editar
+#include <stdio.h>
+#include <conio.h>
+
+int main() {
+    int num, m = 0;
+    printf("Teclee un número: ");
+    scanf("%d", &num);
+
+    if (num <= 10) {
+        m = 2 * num;
+        printf("El duplo de %d es %d", num, m);
+    } else {
+        m = 3 * num;
+        printf("El triplo de %d es %d\n", num, m);
+    }
+
+    getch();
+    return 0;
+}
+IF con condición combinada
+c
+Copiar
+Editar
+#include <stdio.h>
+#include <conio.h>
+
+int main() {
+    int num, m = 0;
+    printf("Teclee un número: ");
+    scanf("%d", &num);
+
+    if (num >= 0 && num <= 10) {
+        m = 2 * num;
+        printf("El duplo de %d es %d", num, m);
+    } else {
+        printf("No realizar ninguna operación\n");
+    }
+
+    getch();
+    return 0;
+}
+Ejercicio con diagrama de flujo
+(¿Querés que te genere el diagrama de flujo correspondiente?)
+
+IF anidado con múltiples alternativas
+c
+Copiar
+Editar
+#include <stdio.h>
+#include <conio.h>
+
+int main() {
+    int num;
+    printf("Ingrese un número entero por teclado: ");
+    scanf("%d", &num);
+
+    if (num > 0)
+        printf("%d es POSITIVO", num);
+    else if (num == 0)
+        printf("Es igual a cero\n");
+    else
+        printf("%d es negativo\n", num);
+
+    getch();
+    return 0;
+}
+Operadores Lógicos
+
+Operador	Descripción
+!	NOT
+&&	AND
+`	
+Ejemplo de saludo según la hora
+c
+Copiar
+Editar
+int main() {
+    int hora;
+    scanf("%d", &hora);
+
+    if ((hora >= 0) && (hora < 12))
+        printf("Buenos días");
+    else if ((hora >= 12) && (hora < 18))
+        printf("Buenas tardes");
+    else if ((hora >= 18) && (hora < 24))
+        printf("Buenas noches");
+    else
+        printf("Hora no válida");
+
+    getch();
+    return 0;
+}
+Ejercicio
+Leer tres valores enteros y mostrar el máximo de ellos.
+
+(¿Querés que lo resuelva en código?)
+
+Ejercicio
+Calcular las raíces de una ecuación cuadrática.
+
+(¿Querés el ejemplo completo en C?)
+
+¿Querés que te pase los diagramas de flujo o ejemplos que faltan como imagen también?
+
+
+
+
+
+
+
+Dijiste:
+si el ejemplo
+
+
+ChatGPT dijo:
+¡Perfecto! Te paso el ejemplo en C para leer tres valores enteros y mostrar el máximo de ellos:
+
+✅ Programa en C para mostrar el número máximo entre tres valores
+c
+Copiar
+Editar
+#include <stdio.h>
+#include <conio.h>
+
+int main() {
+    int a, b, c, max;
+
+    printf("Ingrese tres números enteros:\n");
+    scanf("%d %d %d", &a, &b, &c);
+
+    if (a >= b && a >= c)
+        max = a;
+    else if (b >= a && b >= c)
+        max = b;
+    else
+        max = c;
+
+    printf("El número mayor es: %d\n", max);
+
+    getch();
+    return 0;
+}
